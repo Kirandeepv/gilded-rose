@@ -22,9 +22,9 @@ export class GildedRose {
   }
 
   updateQuality() {
-    this.items.forEach((item) => {
-      return this.service.processData(item);
-    });
+    for (let i = 0; i < this.items.length; i++) {
+      this.items[i] = this.service.processData(this.items[i]);
+    }
     return this.items;
   }
 
