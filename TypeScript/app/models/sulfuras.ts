@@ -7,6 +7,7 @@ class Sulfuras extends DefaultItem {
     this.UPDATE_SELLIN_DATE_BY = 0;
   }
 
+  // "Sulfuras", being a legendary item, never has to be sold or decreases in Quality
   updateQuality() {
     return this.quality;
   }

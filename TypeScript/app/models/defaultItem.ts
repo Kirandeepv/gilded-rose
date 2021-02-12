@@ -14,12 +14,18 @@ class DefaultItem {
     this.name = name;
     this.sellIn = sellIn;
     this.quality = quality;
-    this.UPDATE_QUALITY_BY = 1;
-    this.UPDATE_SELLIN_DATE_BY = 1;
+
+    // These constants will hold the default value by which quality and sellIn are to be updated each day for an item
+    // Since for default items, quality decreases as sellIn day approaches, we use negation here
+    this.UPDATE_QUALITY_BY = -1;
+    this.UPDATE_SELLIN_DATE_BY = -1;
   }
 
+  /* Method that updates the quality of the item
+   * This relies on this.UPDATE_QUALITY_BY which may be overridden in child classes per requirements
+   */
   updateQuality() {
-    let updatedQuality = this.quality - this.UPDATE_QUALITY_BY;
+    let updatedQuality = this.quality + this.UPDATE_QUALITY_BY;
 
     // Make sure we respect the maximum and minimum values for quality
     updatedQuality =
@@ -29,7 +35,7 @@ class DefaultItem {
   }
 
   private updateSellInDate(): number {
-    return this.sellIn - this.UPDATE_SELLIN_DATE_BY;
+    return this.sellIn + this.UPDATE_SELLIN_DATE_BY;
   }
 
   public updateItemForDay() {

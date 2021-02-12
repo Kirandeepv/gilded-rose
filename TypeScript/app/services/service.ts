@@ -8,6 +8,9 @@ import { Conjured } from "../models/conjured";
 class Service {
   constructor() {}
 
+  /* This function will take Item as input and based on the name instantiate the correct item type
+   * Once the item is instantiated, we then update quality as per the item requirements
+   */
   processData(item: Item) {
     let processedItem;
 
