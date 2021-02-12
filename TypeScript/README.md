@@ -1,3 +1,5 @@
+The solution can be found on GitHub at https://github.com/Kirandeepv/gilded-rose/tree/master/TypeScript
+
 This README describes my thought-process as I was solving this refactoring problem
 
 ### Steps to compile | run | test
