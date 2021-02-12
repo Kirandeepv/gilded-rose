@@ -15,9 +15,12 @@ class DefaultItem {
     this.sellIn = sellIn;
     this.quality = quality;
 
-    // These constants will hold the default value by which quality and sellIn are to be updated each day for an item
-    // Since for default items, quality decreases as sellIn day approaches, we use negation here
+    // Represents the number by which quality increases or decreases for a particular item.
+    // This can be a positive or negative integer based on whether the quality increases or decreases with time respectively.
     this.UPDATE_QUALITY_BY = -1;
+
+    // Represents the number by which sellIn prop changes.
+    // This is kept negative here to indicate that the value decreases with each day
     this.UPDATE_SELLIN_DATE_BY = -1;
   }
 

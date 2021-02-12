@@ -1,6 +1,15 @@
 This README describes my thought-process as I was solving this refactoring problem
 
-### A vague description of initial steps
+### Steps to compile | run | test
+
+1. Navigate to folder `/TypeScript` using `cd TypeScript`
+2. Install packages using `npm install`
+3. Compile the project using `npm run compile`. This should compile all the TypeScript files
+4. Execute `Golden specs` using `npx ts-node test/golden-master-text-test.ts`
+5. If you want to change the input date, you can modify `items` array in [golden-master-text-test.ts](https://github.com/Kirandeepv/gilded-rose/blob/master/TypeScript/test/golden-master-text-test.ts#L3)
+6. Execute unit tests using `npm run test`
+
+### An overview of my initial steps
 
 1. Chose TypeScript as language and navigated to sub-folder
 2. Explored `package.json` first to understand how the process is architected and what packages it use. This helped me figure out the `compile` and `test` commands for the projects
@@ -18,3 +27,28 @@ This README describes my thought-process as I was solving this refactoring probl
   1. UPDATE_QUALITY_BY: Represents the number by which quality increases or decreases for a particular item. This can be a positive or negative integer based on whether the quality increases or decreases with time respectively.
   2. UPDATE_SELLIN_DATE_BY: Represents the number by which the `sellIn` date changes. Set to (-1) since the day decreses
 - For each of the sub-types, the above values are updated per requirements
+- The logic for `updateQuality` method is moved to `DefaultItem.ts` which will now be a centralized place to compute the quality value
+
+### Folder structure
+
+- `models` folder contains the base type `DefaultIitem` and all the child types
+- `services` folder contains single service `service.ts`. This service is responsible for parsing data
+
+app
+models
+aged-brie.ts
+backstage.ts
+conjured.ts
+defaultItem.ts
+sulfuras.ts
+services
+gilded-rose.ts
+test
+gilded-rose.spec.ts
+golden-master-text-test.ts
+
+### Can be improved
+
+1. Didn't get sufficient time to verify all the scenarios, specially with huge dataset.
+2. Add more unit tests. Only a few are added currently to describe the thought process. Each file should have its own specs
+3. Service method can be DRYed up a bit

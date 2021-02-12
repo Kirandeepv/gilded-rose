@@ -1,4 +1,4 @@
-### Solution
+## Solution
 
 I have opted for `TypeScript` language for my solution. Please refer to [TypeScript/readme](https://github.com/Kirandeepv/gilded-rose/blob/master/TypeScript/README.md) file for details
 

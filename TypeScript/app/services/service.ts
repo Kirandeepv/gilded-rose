@@ -15,6 +15,7 @@ class Service {
     let processedItem;
 
     switch (item.name) {
+      // TODO: Use enum instead of hard-coded names here
       case "Aged Brie":
         processedItem = new AgedBrie(item.name, item.sellIn, item.quality);
         return processedItem.updateItemForDay();
